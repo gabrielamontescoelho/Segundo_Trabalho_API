@@ -16,12 +16,12 @@ public class LancamentoVendas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // ID numérico sequencial para as vendas [cite: 26]
+    private Long id; // ID numérico sequencial para as vendas 
     
-    private LocalDate data; // Data da venda [cite: 27]
-    private Double valor; // Valor da venda [cite: 28]
+    private LocalDate data; // Data da venda 
+    private Double valor; // Valor da venda 
 
-    // Relacionamento ORM: Muitos lançamentos pertencem a UM vendedor [cite: 29, 30]
+    // Relacionamento ORM: Muitos lançamentos pertencem a UM vendedor 
     @ManyToOne
     @JoinColumn(name = "id_vendedor") // Cria a coluna de chave estrangeira no banco de dados
     private Vendedor vendedor; 
@@ -38,7 +38,7 @@ public class LancamentoVendas {
         this.vendedor = vendedor;
     }
 
-    // --- GETTERS E SETTERS --- [cite: 22]
+    // --- GETTERS E SETTERS --- 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
