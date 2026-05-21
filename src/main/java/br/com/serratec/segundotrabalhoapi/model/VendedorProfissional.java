@@ -2,11 +2,11 @@ package br.com.serratec.segundotrabalhoapi.model;
 
 import java.util.UUID;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "vendedor_profissional")
+@DiscriminatorValue("PROFISSIONAL")
 public class VendedorProfissional extends Vendedor {
     private String cnpj;
 
