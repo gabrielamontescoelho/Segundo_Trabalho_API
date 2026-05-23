@@ -17,7 +17,7 @@ public class ControllerExceptionHandler {
         List<String> erros = ex.getBindingResult()
             .getFieldErrors()
             .stream()
-            .map(erro -> erro.getField()+ ":" + erro.getDefaultMessage())
+            .map(erro -> erro.getField()+ ": " + erro.getDefaultMessage())
             .toList();
             ErroResposta resposta = new ErroResposta(HttpStatus.BAD_REQUEST.value(),"Erro validação",LocalDateTime.now(),erros);
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(resposta);
