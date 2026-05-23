@@ -16,21 +16,20 @@ public class LancamentoVendas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // ID numérico sequencial para as vendas 
+    private Long id; 
     
-    private LocalDate data; // Data da venda
-    private Double valor; // Valor da venda 
+    private LocalDate data; 
+    private Double valor; 
 
-    // Relacionamento ORM: Muitos lançamentos pertencem a UM vendedor
+    
     @ManyToOne
-    @JoinColumn(name = "id_vendedor") // Cria a coluna de chave estrangeira no banco de dados
+    @JoinColumn(name = "id_vendedor") 
     private Vendedor vendedor; 
 
-    // Construtor padrão obrigatório do JPA
+    
     public LancamentoVendas() {
     }
 
-    // Construtor completo
     public LancamentoVendas(Long id, LocalDate data, Double valor, Vendedor vendedor) {
         this.id = id;
         this.data = data;
@@ -38,7 +37,7 @@ public class LancamentoVendas {
         this.vendedor = vendedor;
     }
 
-    // --- GETTERS E SETTERS ---
+
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
