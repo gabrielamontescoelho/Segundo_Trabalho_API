@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import br.com.serratec.segundotrabalhoapi.dto.LancamentosVendasResponseDTO;
+import br.com.serratec.segundotrabalhoapi.dto.LancamentoVendasResponseDTO;
 import br.com.serratec.segundotrabalhoapi.model.LancamentoVendas;
 import br.com.serratec.segundotrabalhoapi.service.LancamentoService;
 
@@ -18,7 +18,7 @@ public class LancamentoController {
     private LancamentoService service;
 
     @GetMapping("/{id}")
-    public LancamentosVendasResponseDTO listarPorId(@PathVariable Long id) {
+    public LancamentoVendasResponseDTO listarPorId(@PathVariable Long id) {
         return service.listarPorId(id);
     }
 
