@@ -9,6 +9,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 
 @Entity
 @Table(name = "tb_lancamento_vendas")
@@ -18,10 +21,15 @@ public class LancamentoVendas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; 
     
+    @NotNull(message = "A data da venda é obrigatória")
     private LocalDate data; 
+
+    @NotNull(message = "O valor da venda é obrigatório")
+    @Positive(message = "O valor da venda deve ser maior que zero")
     private Double valor; 
 
-    
+    @Valid
+    @NotNull (message = "O vendedor é obrigatório")
     @ManyToOne
     @JoinColumn(name = "id_vendedor") 
     private Vendedor vendedor; 
